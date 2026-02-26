@@ -13,7 +13,7 @@ My priority is reducing catastrophic compromise risk first, then minimizing expo
 
 # 1) Risk Assessment – Top 8 (Ranked by Business Impact)
 
-| # | Finding (Evidence) | Severity | Practical Justification | Business Impact |
+| S.No | Finding (Evidence) | Severity | Practical Justification | Business Impact |
 |---|-------------------|----------|--------------------------|----------------|
 | 1 | `roles/owner` assigned to `cicd@prod-payments` | **CRITICAL** | If the CI/CD pipeline is compromised (token leak, supply-chain attack, misconfigured runner), the attacker inherits full project control including IAM modification. In production, this is unacceptable blast radius. | Complete production takeover, data exfiltration, infrastructure destruction |
 | 2 | `disableServiceAccountKeyCreation = false` | **CRITICAL** | Allowing service account keys enables long-lived credentials that can be downloaded and reused outside Google’s identity boundary. This defeats centralized IAM control and modern keyless security practices. | Persistent unauthorized access and difficult-to-detect breaches |
@@ -112,11 +112,5 @@ These guardrails convert one-time fixes into enforceable policy.
 | Broad Terraform IAM binding (`roles/editor`) | Infrastructure-as-code can institutionalize overprivilege if not governed, making risk systemic rather than accidental. |
 
 ---
-
-# Final Assessment
-
-The organization has strong security tooling in place, but enforcement inconsistencies create unnecessary exposure in production.
-
-By prioritizing privilege reduction, exposure minimization, and policy-level guardrails, the environment can significantly reduce breach likelihood within 60 days — without architectural redesign or service disruption.
 
 This approach balances security maturity with operational continuity.
