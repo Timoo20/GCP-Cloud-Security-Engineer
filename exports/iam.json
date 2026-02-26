@@ -1,0 +1,49 @@
+{
+  "organization": "organizations/999999999999",
+  "bindings": [
+    {
+      "role": "roles/resourcemanager.organizationAdmin",
+      "members": [
+        "group:cloud-admins@example.com"
+      ]
+    },
+    {
+      "role": "roles/iam.securityAdmin",
+      "members": [
+        "group:devops@example.com"
+      ]
+    }
+  ],
+  "folders": [
+    {
+      "name": "prod",
+      "bindings": [
+        {
+          "role": "roles/editor",
+          "members": [
+            "group:engineering@example.com"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "id": "prod-payments",
+          "bindings": [
+            {
+              "role": "roles/owner",
+              "members": [
+                "serviceAccount:cicd@prod-payments.iam.gserviceaccount.com"
+              ]
+            },
+            {
+              "role": "roles/iam.serviceAccountUser",
+              "members": [
+                "group:engineering@example.com"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

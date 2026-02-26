@@ -1,0 +1,18 @@
+{
+  "constraints": [
+    {
+      "name": "constraints/iam.disableServiceAccountKeyCreation",
+      "enforced": false
+    },
+    {
+      "name": "constraints/compute.vmExternalIpAccess",
+      "allowedValues": [
+        "0.0.0.0/0"
+      ]
+    },
+    {
+      "name": "constraints/compute.requireOsLogin",
+      "enforced": false
+    }
+  ]
+}

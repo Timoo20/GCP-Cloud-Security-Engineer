@@ -1,0 +1,24 @@
+{
+  "findings": [
+    {
+      "severity": "CRITICAL",
+      "category": "Overprivileged Service Account",
+      "resource": "cicd@prod-payments"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Public Load Balancer without WAF",
+      "resource": "payments-lb"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Data Access Logs Disabled",
+      "resource": "prod-payments"
+    },
+    {
+      "severity": "LOW",
+      "category": "Old SSL Policy",
+      "resource": "payments-lb"
+    }
+  ]
+}

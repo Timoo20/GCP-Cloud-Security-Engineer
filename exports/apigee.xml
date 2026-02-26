@@ -1,0 +1,11 @@
+<Flow name="PublicRoute">
+  <Condition>(proxy.pathsuffix MatchesPath "/public/**")</Condition>
+  <Request/>
+</Flow>
+
+<Flow name="ProtectedRoute">
+  <Condition>(proxy.pathsuffix MatchesPath "/v2/**")</Condition>
+  <Request>
+    <Step><Name>OAuthV2-VerifyAccessToken</Name></Step>
+  </Request>
+</Flow>

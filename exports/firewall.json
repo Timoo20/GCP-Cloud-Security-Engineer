@@ -1,0 +1,31 @@
+{
+  "rules": [
+    {
+      "name": "allow-all-internal",
+      "priority": 800,
+      "action": "ALLOW",
+      "sourceRanges": [
+        "10.0.0.0/8"
+      ],
+      "protocol": "all"
+    },
+    {
+      "name": "allow-ssh-temp",
+      "priority": 900,
+      "action": "ALLOW",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "protocol": "tcp:22"
+    },
+    {
+      "name": "deny-all",
+      "priority": 1000,
+      "action": "DENY",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "protocol": "all"
+    }
+  ]
+}
